@@ -96,7 +96,7 @@ app.get('/', async (_, res) => {
 
 // III. Boot up the app:
 
-app.listen(8000, async () => {
+app.listen(2202, async () => {
   try {
     const client = await MongoClient.connect(mongoUri, mongoClientOptions)
     const db = client.db(dbName);
@@ -107,6 +107,6 @@ app.listen(8000, async () => {
     console.error('Connection to MongoDB failed: ', err)
   }
 
-  console.log('App platform demo app - Backend listening on port 8000!');
+  console.log('App platform demo app - Backend listening on port 2202!');
   console.log(`CORS config: configured to respond to a frontend hosted on ${env.frontend_url}`);
 });
