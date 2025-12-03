@@ -47,9 +47,9 @@ export default function mountPaymentsEndpoints(router: Router) {
 
   // approve the current payment
   router.post('/approve', async (req, res) => {
-    if (!req.session.currentUser) {
-      return res.status(401).json({ error: 'unauthorized', message: "User needs to sign in first" });
-    }
+    // if (!req.session.currentUser) {
+    //   return res.status(401).json({ error: 'unauthorized', message: "User needs to sign in first" });
+    // }
 
     const app = req.app;
 
@@ -65,7 +65,7 @@ export default function mountPaymentsEndpoints(router: Router) {
     await orderCollection.insertOne({
       pi_payment_id: paymentId,
       product_id: currentPayment.data.metadata.productId,
-      user: req.session.currentUser.uid,
+      // user: req.session.currentUser.uid,
       txid: null,
       paid: false,
       cancelled: false,
