@@ -47,20 +47,7 @@ app.use(express.json())
 
 // Handle CORS:
 app.use(cors({
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      env.frontend_url,
-      "https://tubuco.com",
-      "https://www.tubuco.com",
-      "https://app.tubuco.com"
-    ];
-
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true); 
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: env.frontend_url,
   credentials: true
 }));
 
@@ -103,7 +90,7 @@ app.use("/notifications", notificationRouter);
 
 // Hello World page to check everything works:
 app.get('/', async (_, res) => {
-  res.status(200).send({ message: "Hello, World ducobu" });
+  res.status(200).send({ message: "Hello, World!" });
 });
 
 
