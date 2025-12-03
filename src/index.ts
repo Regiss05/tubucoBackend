@@ -98,7 +98,7 @@ app.use("/notifications", notificationRouter);
 
 // Hello World page to check everything works:
 app.get('/', async (_, res) => {
-  res.status(200).send({ message: "Hello, World!" });
+  res.status(200).send({ message: "Hello, tubuco!" });
 });
 
 
